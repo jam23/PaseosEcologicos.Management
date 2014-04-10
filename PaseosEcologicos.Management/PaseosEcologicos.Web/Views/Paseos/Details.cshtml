@@ -1,0 +1,32 @@
+@model PaseosEcologicos.Model.Paseos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Paseos</legend>
+
+    <div class="display-label">Titulo</div>
+    <div class="display-field">@Model.Titulo</div>
+
+    <div class="display-label">Descripcion</div>
+    <div class="display-field">@Model.Descripcion</div>
+
+    <div class="display-label">FechaDePartida</div>
+    <div class="display-field">@String.Format("{0:g}", Model.FechaDePartida)</div>
+
+    <div class="display-label">Precio</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Precio)</div>
+
+    <div class="display-label">Reservaciones</div>
+    <div class="display-field">@(Model.Reservaciones == null ? "None" : Model.Reservaciones.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

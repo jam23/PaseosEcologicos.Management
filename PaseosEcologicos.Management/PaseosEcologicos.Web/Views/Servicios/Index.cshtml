@@ -1,0 +1,77 @@
+@model IEnumerable<PaseosEcologicos.Model.Servicios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            TipoId
+        </th>
+        <th>
+            Titulo
+        </th>
+        <th>
+            Descripcion
+        </th>
+        <th>
+            Precio
+        </th>
+        <th>
+            Implementos_Obligatorios
+        </th>
+        <th>
+            Implementos
+        </th>
+        <th>
+            Tipos_De_Servicios
+        </th>
+        <th>
+            Servicios_Consumidos
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.TipoId
+        </td>
+        <td>
+			@item.Titulo
+        </td>
+        <td>
+			@item.Descripcion
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Precio)
+        </td>
+        <td>
+			@item.Implementos_Obligatorios
+        </td>
+        <td>
+			@(item.Implementos == null ? "None" : item.Implementos.Count.ToString())
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Tipos_De_Servicios.Titulo).ToString()
+        </td>
+        <td>
+			@(item.Servicios_Consumidos == null ? "None" : item.Servicios_Consumidos.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

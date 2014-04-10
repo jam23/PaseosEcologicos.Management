@@ -1,0 +1,35 @@
+@model PaseosEcologicos.Model.Implementos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Implementos</legend>
+
+    <div class="display-label">ServicioId</div>
+    <div class="display-field">@Model.ServicioId</div>
+
+    <div class="display-label">Titulo</div>
+    <div class="display-field">@Model.Titulo</div>
+
+    <div class="display-label">Descripcion</div>
+    <div class="display-field">@Model.Descripcion</div>
+
+    <div class="display-label">Precio</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Precio)</div>
+
+    <div class="display-label">Servicios</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Servicios).ToString()</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+
