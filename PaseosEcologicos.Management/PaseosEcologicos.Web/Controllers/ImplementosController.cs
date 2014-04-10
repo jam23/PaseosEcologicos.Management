@@ -35,6 +35,8 @@ namespace PaseosEcologicos.Web.Controllers
 
         public ActionResult Create()
         {
+            var servicios = context.Servicios.Where(a=> a.TipoId == 3);
+            ViewBag.servicioId = new SelectList(servicios, "Id", "Titulo");
             return View();
         } 
 
@@ -50,6 +52,8 @@ namespace PaseosEcologicos.Web.Controllers
                 context.SaveChanges();
                 return RedirectToAction("Index");  
             }
+            var servicios = context.Servicios.Where(a => a.TipoId == 3);
+            ViewBag.servicioId = new SelectList(servicios, "Id", "Titulo");
 
             return View(implementos);
         }

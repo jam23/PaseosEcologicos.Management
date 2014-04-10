@@ -15,15 +15,17 @@
                     <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
                 </div>
                 <div class="float-right">
-                    <section id="login">
+                    @*<section id="login">
                         @Html.Partial("_LoginPartial")
-                    </section>
+                    </section>*@
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li>@Html.ActionLink("Servicios", "Index", "Servicios")</li>
+                            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Tipos de Servicios","Index","TiposDeServicios")</li>         
+                            <li>@Html.ActionLink("Servicios","Index","Servicios")</li>         
+                            <li>@Html.ActionLink("Implementos","Index","Implementos")</li>
+                             <li>@Html.ActionLink("Paseos","Index","Paseos")</li>
+
                         </ul>
                     </nav>
                 </div>

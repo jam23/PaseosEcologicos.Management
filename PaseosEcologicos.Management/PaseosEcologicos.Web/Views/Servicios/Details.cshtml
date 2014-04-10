@@ -4,38 +4,47 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <fieldset>
     <legend>Servicios</legend>
-
-    <div class="display-label">TipoId</div>
-    <div class="display-field">@Model.TipoId</div>
-
-    <div class="display-label">Titulo</div>
-    <div class="display-field">@Model.Titulo</div>
-
-    <div class="display-label">Descripcion</div>
-    <div class="display-field">@Model.Descripcion</div>
-
-    <div class="display-label">Precio</div>
-    <div class="display-field">@String.Format("{0:F}", Model.Precio)</div>
-
-    <div class="display-label">Implementos_Obligatorios</div>
-    <div class="display-field">@Model.Implementos_Obligatorios</div>
-
-    <div class="display-label">Implementos</div>
-    <div class="display-field">@(Model.Implementos == null ? "None" : Model.Implementos.Count.ToString())</div>
-
-    <div class="display-label">Tipos_De_Servicios</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.Tipos_De_Servicios).ToString()</div>
-
-    <div class="display-label">Servicios_Consumidos</div>
-    <div class="display-field">@(Model.Servicios_Consumidos == null ? "None" : Model.Servicios_Consumidos.Count.ToString())</div>
+    <div class="form-group">
+        <div class="display-label">TipoId</div>
+        <div class="display-field form-control" disabled>@Model.TipoId</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Titulo</div>
+        <div class="display-field form-control" disabled>@Model.Titulo</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Descripcion</div>
+        <div class="display-field form-control" disabled>@Model.Descripcion</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Precio</div>
+        <div class="display-field form-control" disabled>@String.Format("{0:F}", Model.Precio)</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Implementos_Obligatorios</div>
+        <div class="display-field form-control" disabled>@Model.Implementos_Obligatorios</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Implementos</div>
+        <div class="display-field form-control" disabled>@(Model.Implementos == null ? "None" : Model.Implementos.Count.ToString())</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Tipos_De_Servicios</div>
+        <div class="display-field form-control" disabled>@Html.DisplayTextFor(_ => Model.Tipos_De_Servicios).ToString()</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Servicios_Consumidos</div>
+        <div class="display-field form-control" disabled>@(Model.Servicios_Consumidos == null ? "None" : Model.Servicios_Consumidos.Count.ToString())</div>
+    </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id=Model.Id }, new  {@class = "btn btn-default"}) |
+    @Html.ActionLink("Atrás", "Index", null, new  {@class = "btn btn-default"})
 </p>
+
 
 

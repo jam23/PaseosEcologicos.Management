@@ -4,17 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Servicios</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Servicio", "Create",null, new  {@class = "btn btn-default"})
 </p>
 <table class="table">
     <tr>
-        <th></th>
-        <th>
-            Id Servicio
-        </th>
+        <th></th>   
         <th>
             Titulo
         </th>
@@ -23,10 +20,7 @@
         </th>
         <th>
             Precio
-        </th>
-        <th>
-            Implementos Obligatorios
-        </th>
+        </th>      
         <th>
             Implementos
         </th>
@@ -34,7 +28,7 @@
             Tipo de Servicio
         </th>
         <th>
-            Cantidad Servicios Consumidos
+            Cant. Consumida
         </th>
     </tr>
 
@@ -44,10 +38,7 @@
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-        <td>
-			@item.TipoId
-        </td>
+        </td>    
         <td>
 			@item.Titulo
         </td>
@@ -56,10 +47,7 @@
         </td>
         <td>
 			@String.Format("{0:F}", item.Precio)
-        </td>
-        <td>
-			@item.Implementos_Obligatorios
-        </td>
+        </td>       
         <td>
 			@(item.Implementos == null ? "None" : item.Implementos.Count.ToString())
         </td>

@@ -4,26 +4,27 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar Tipo de Servicio</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Seguro que lo desea eliminar?</h3>
 <fieldset>
-    <legend>Tipos_De_Servicios</legend>
-
-    <div class="display-label">Titulo</div>
-    <div class="display-field">@Model.Titulo</div>
-
-    <div class="display-label">Descripcion</div>
-    <div class="display-field">@Model.Descripcion</div>
-
-    <div class="display-label">Servicios</div>
-    <div class="display-field">@(Model.Servicios == null ? "None" : Model.Servicios.Count.ToString())</div>
-</fieldset>
+    <legend>Tipos De Servicios</legend>
+    <div class="form-group">
+        <div class="display-label">Titulo</div>
+        <div class="display-field form-control" disabled>@Model.Titulo</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Descripcion</div>
+        <div class="display-field form-control" disabled>@Model.Descripcion</div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">Servicios</div>
+        <div class="display-field form-control" disabled>@(Model.Servicios == null ? "None" : Model.Servicios.Count.ToString())</div>
+    </div></fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" class="btn" value="Eliminar" /> |
+          @Html.ActionLink("Atrás", "Index", null, new  {@class = "btn btn-default"})
     </p>
 }
-
 

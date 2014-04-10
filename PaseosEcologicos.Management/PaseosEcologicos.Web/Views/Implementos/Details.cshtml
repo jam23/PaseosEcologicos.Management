@@ -1,32 +1,37 @@
 @model PaseosEcologicos.Model.Implementos
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle de Implemento";
 }
 
-<h2>Details</h2>
+<h2>Detalle</h2>
 
 <fieldset>
     <legend>Implementos</legend>
-
-    <div class="display-label">ServicioId</div>
-    <div class="display-field">@Model.ServicioId</div>
-
-    <div class="display-label">Titulo</div>
-    <div class="display-field">@Model.Titulo</div>
-
-    <div class="display-label">Descripcion</div>
-    <div class="display-field">@Model.Descripcion</div>
-
-    <div class="display-label">Precio</div>
-    <div class="display-field">@String.Format("{0:F}", Model.Precio)</div>
-
-    <div class="display-label">Servicios</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.Servicios).ToString()</div>
+        <div class="form-group">
+            <div class="display-label">ServicioId</div>
+            <div class="display-field form-control" disabled>@Model.ServicioId</div>
+        </div>
+        <div class="form-group">
+            <div class="display-label">Titulo</div>
+            <div class="display-field form-control" disabled>@Model.Titulo</div>
+        </div>
+        <div class="form-group">
+            <div class="display-label">Descripcion</div>
+            <div class="display-field form-control" disabled>@Model.Descripcion</div>
+        </div>
+        <div class="form-group">
+            <div class="display-label">Precio</div>
+            <div class="display-field form-control" disabled>@String.Format("{0:F}", Model.Precio)</div>
+        </div>
+        <div class="form-group">
+            <div class="display-label">Servicios</div>
+            <div class="display-field form-control" disabled>@Html.DisplayTextFor(_ => Model.Servicios).ToString()</div>
+        </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id=Model.Id }, new  {@class = "btn btn-default"}) |
+    @Html.ActionLink("Atrás", "Index", null, new  {@class = "btn btn-default"})
 </p>
 
 

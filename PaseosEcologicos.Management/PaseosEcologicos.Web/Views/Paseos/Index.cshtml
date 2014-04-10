@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Paseos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Paseo", "Create",null, new  {@class = "btn btn-default"})
 </p>
 <table class="table">
     <tr>
@@ -19,7 +19,7 @@
             Descripcion
         </th>
         <th>
-            FechaDePartida
+            Fecha De Partida
         </th>
         <th>
             Precio
