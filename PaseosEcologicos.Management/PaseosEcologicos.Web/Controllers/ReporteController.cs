@@ -21,8 +21,7 @@ namespace PaseosEcologicos.Web.Controllers
             var result = context.vReporteDeCosumoes.ToList();
             if (!String.IsNullOrEmpty(query))
             {
-                result = result.Where(r => r.Cliente.Contains(query)).ToList();
-                result.Sum(r => r.PrecioDeServicioConsumido);
+                result = result.Where(r => r.Cliente.Contains(query) || r.ReservacionId.ToString().Contains(query) || r.Representante.Contains(query)).ToList();              
             }
 
             return View(result);

@@ -16,25 +16,25 @@
         </div>
     </form>
 </p>
-<table>
+<table class="table">
     <tr>
         <th></th>
-        <th>ReservacionId
+        @*<th>ReservacionId
         </th>
         <th>PaseoId
         </th>
         <th>TituloDePaseo
         </th>
         <th>ClienteId
-        </th>
+        </th>*@
         <th>Cliente
         </th>
         <th>Celular
         </th>
         <th>Correo
         </th>
-        <th>RepresentateId
-        </th>
+        @*<th>RepresentateId
+        </th>*@
         <th>Representante
         </th>
         <th>TelRepresentante
@@ -54,12 +54,12 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-            <td>
+             <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Detalle", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
+        </td>
+            @*<td>
                 @item.ReservacionId
             </td>
             <td>
@@ -70,7 +70,7 @@
             </td>
             <td>
                 @item.ClienteId
-            </td>
+            </td>*@
             <td>
                 @item.Cliente
             </td>

@@ -9,36 +9,36 @@
 <fieldset>
     <legend>Clientes</legend>
 
-    <div class="display-label">AfiliadorId</div>
-    <div class="display-field">@Model.AfiliadorId</div>
+   @* <div class="display-label">AfiliadorId</div>
+    <div class="display-field form-control" disabled>@Model.AfiliadorId</div>*@
 
     <div class="display-label">Nombre</div>
-    <div class="display-field">@Model.Nombre</div>
+    <div class="display-field form-control" disabled>@Model.Nombre</div>
 
     <div class="display-label">Apellido</div>
-    <div class="display-field">@Model.Apellido</div>
+    <div class="display-field form-control" disabled>@Model.Apellido</div>
 
     <div class="display-label">Celular</div>
-    <div class="display-field">@Model.Celular</div>
+    <div class="display-field form-control" disabled>@Model.Celular</div>
 
     <div class="display-label">Correo</div>
-    <div class="display-field">@Model.Correo</div>
+    <div class="display-field form-control" disabled>@Model.Correo</div>
 
-    <div class="display-label">Clientes1</div>
-    <div class="display-field">@(Model.Clientes1 == null ? "None" : Model.Clientes1.Count.ToString())</div>
+@*    <div class="display-label">Clientes1</div>
+    <div class="display-field form-control" disabled>@(Model.Clientes1 == null ? "None" : Model.Clientes1.Count.ToString())</div>
 
     <div class="display-label">Clientes2</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.Clientes2).ToString()</div>
+    <div class="display-field form-control" disabled>@Html.DisplayTextFor(_ => Model.Clientes2).ToString()</div>*@
 
-    <div class="display-label">Reservaciones</div>
-    <div class="display-field">@(Model.Reservaciones == null ? "None" : Model.Reservaciones.Count.ToString())</div>
+   @* <div class="display-label">Reservaciones</div>
+    <div class="display-field form-control" disabled>@(Model.Reservaciones == null ? "None" : Model.Reservaciones.Count.ToString())</div>*@
 
     <div class="display-label">Servicios_Consumidos</div>
-    <div class="display-field">@(Model.Servicios_Consumidos == null ? "None" : Model.Servicios_Consumidos.Count.ToString())</div>
+    <div class="display-field form-control" disabled>@(Model.Servicios_Consumidos == null ? "None" : Model.Servicios_Consumidos.Count.ToString())</div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id=Model.Id }, new  {@class = "btn btn-default"}) |
+    @Html.ActionLink("Atrás", "Index", null, new  {@class = "btn btn-default"})
 </p>
 
 

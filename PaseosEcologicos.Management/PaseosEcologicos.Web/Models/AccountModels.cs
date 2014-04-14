@@ -38,53 +38,53 @@ namespace PaseosEcologicos.Web.Models
 
     public class LocalPasswordModel
     {
-        [Required]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Contraseña actual")]
         public string OldPassword { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage="El campo {0} es requerido")]
+        [StringLength(100, ErrorMessage = "La {0} Debe tener un minino de {2}.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Nueva contraseña")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Confirmar nueva contraseña")]
+        [Compare("NewPassword", ErrorMessage = "La nueva contraseña y la cotraseña de confirmacion deben ser iguales.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class LoginModel
     {
-        [Required]
-        [Display(Name = "User name")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [Display(Name = "Nombre Usuario")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Contraseña")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Guardar Usuario/Contraseña?")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterModel
     {
-        [Required]
-        [Display(Name = "User name")]
+         [Required(ErrorMessage = "El campo {0} es requerido")]
+        [Display(Name = "Nombre Usuario")]
         public string UserName { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+         [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100, ErrorMessage = "La {0} Debe tener un minino de {2}.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Contraseña")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Confirmar Contraseña")]
+        [Compare("Password", ErrorMessage = "La contraseña y la cotraseña de confirmacion deben ser iguales.")]
         public string ConfirmPassword { get; set; }
     }
 
