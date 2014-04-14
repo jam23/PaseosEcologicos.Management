@@ -11,10 +11,7 @@
 </p>
 <table class="table">
     <tr>
-        <th></th>
-        <th>
-            ServicioId
-        </th>
+        <th></th>       
         <th>
             Titulo
         </th>
@@ -25,7 +22,7 @@
             Precio
         </th>
         <th>
-            Servicios
+            Servicio
         </th>
     </tr>
 
@@ -36,10 +33,7 @@
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
-        <td>
-			@item.ServicioId
-        </td>
-        <td>
+            <td>
 			@item.Titulo
         </td>
         <td>
@@ -49,7 +43,7 @@
 			@String.Format("{0:F}", item.Precio)
         </td>
         <td>
-			@Html.DisplayTextFor(_ => item.Servicios).ToString()
+			@Html.DisplayTextFor(_ => item.Servicios.Titulo).ToString()
         </td>
     </tr>
 }

@@ -1,0 +1,44 @@
+@model PaseosEcologicos.Model.Clientes
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.AfiliadorId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.AfiliadorId)
+    @Html.ValidationMessageFor(model => model.AfiliadorId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Nombre)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Nombre)
+    @Html.ValidationMessageFor(model => model.Nombre)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Apellido)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Apellido)
+    @Html.ValidationMessageFor(model => model.Apellido)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Celular)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Celular)
+    @Html.ValidationMessageFor(model => model.Celular)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Correo)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Correo)
+    @Html.ValidationMessageFor(model => model.Correo)
+</div>
+

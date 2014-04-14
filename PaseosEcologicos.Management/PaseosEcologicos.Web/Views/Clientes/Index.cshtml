@@ -1,0 +1,61 @@
+@model IEnumerable<PaseosEcologicos.Model.Clientes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>Nombre
+        </th>
+        <th>Apellido
+        </th>
+        <th>Celular
+        </th>
+        <th>Correo
+        </th>
+        <th>Servicios Consumidos
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+            <td>
+                @item.Nombre
+            </td>
+            <td>
+                @item.Apellido
+            </td>
+            <td>
+                @item.Celular
+            </td>
+            <td>
+                @item.Correo
+            </td>
+            <td>
+                <ul>
+                    @foreach (var servicio in item.Servicios_Consumidos)
+                    {
+                        <li>@Html.ActionLink(servicio.Servicios.Titulo.ToString(), "Details", "Servicios", new {id = servicio.ServicioId}, new {})</li>
+                    }
+                </ul>
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+

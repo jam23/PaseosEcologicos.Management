@@ -1,0 +1,62 @@
+@model PaseosEcologicos.Model.vReporteDeCosumo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>vReporteDeCosumo</legend>
+
+    <div class="display-label">ReservacionId</div>
+    <div class="display-field">@Model.ReservacionId</div>
+
+    <div class="display-label">PaseoId</div>
+    <div class="display-field">@Model.PaseoId</div>
+
+    <div class="display-label">TituloDePaseo</div>
+    <div class="display-field">@Model.TituloDePaseo</div>
+
+    <div class="display-label">ClienteId</div>
+    <div class="display-field">@Model.ClienteId</div>
+
+    <div class="display-label">Cliente</div>
+    <div class="display-field">@Model.Cliente</div>
+
+    <div class="display-label">Celular</div>
+    <div class="display-field">@Model.Celular</div>
+
+    <div class="display-label">Correo</div>
+    <div class="display-field">@Model.Correo</div>
+
+    <div class="display-label">RepresentateId</div>
+    <div class="display-field">@Model.RepresentateId</div>
+
+    <div class="display-label">Representante</div>
+    <div class="display-field">@Model.Representante</div>
+
+    <div class="display-label">TelRepresentante</div>
+    <div class="display-field">@Model.TelRepresentante</div>
+
+    <div class="display-label">CorreoRepresentante</div>
+    <div class="display-field">@Model.CorreoRepresentante</div>
+
+    <div class="display-label">ServicioId</div>
+    <div class="display-field">@Model.ServicioId</div>
+
+    <div class="display-label">TipoDeServicio</div>
+    <div class="display-field">@Model.TipoDeServicio</div>
+
+    <div class="display-label">ServicioConsumido</div>
+    <div class="display-field">@Model.ServicioConsumido</div>
+
+    <div class="display-label">PrecioDeServicioConsumido</div>
+    <div class="display-field">@String.Format("{0:F}", Model.PrecioDeServicioConsumido)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

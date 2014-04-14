@@ -1,0 +1,47 @@
+@model PaseosEcologicos.Model.Clientes
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Clientes</legend>
+
+    <div class="display-label">AfiliadorId</div>
+    <div class="display-field">@Model.AfiliadorId</div>
+
+    <div class="display-label">Nombre</div>
+    <div class="display-field">@Model.Nombre</div>
+
+    <div class="display-label">Apellido</div>
+    <div class="display-field">@Model.Apellido</div>
+
+    <div class="display-label">Celular</div>
+    <div class="display-field">@Model.Celular</div>
+
+    <div class="display-label">Correo</div>
+    <div class="display-field">@Model.Correo</div>
+
+    <div class="display-label">Clientes1</div>
+    <div class="display-field">@(Model.Clientes1 == null ? "None" : Model.Clientes1.Count.ToString())</div>
+
+    <div class="display-label">Clientes2</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Clientes2).ToString()</div>
+
+    <div class="display-label">Reservaciones</div>
+    <div class="display-field">@(Model.Reservaciones == null ? "None" : Model.Reservaciones.Count.ToString())</div>
+
+    <div class="display-label">Servicios_Consumidos</div>
+    <div class="display-field">@(Model.Servicios_Consumidos == null ? "None" : Model.Servicios_Consumidos.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+
